@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@Common/*": ["libs/*"]
+    },
     // Environment setup & latest features
     "lib": ["ESNext"],
     "target": "ESNext",

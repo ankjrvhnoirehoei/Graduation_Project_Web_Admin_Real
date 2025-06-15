@@ -1,10 +1,10 @@
 {
   "name": "graduation_project_web_admin_real",
-  "module": "index.ts",
+  "module": "server/index.ts",
   "type": "module",
   "scripts": {
-    "start": "bun index.ts",
-    "dev": "bun --watch index.ts"
+    "start": "bun server/index.ts",
+    "dev": "bun --watch server/index.ts"
   },
   "private": true,
   "workspaces": [
@@ -15,5 +15,11 @@
   },
   "peerDependencies": {
     "typescript": "^5"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "hono": "^4.7.11",
+    "mongoose": "^8.15.2",
+    "zod": "^3.25.64"
   }
 }
