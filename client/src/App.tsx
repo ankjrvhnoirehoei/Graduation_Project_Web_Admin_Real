@@ -1,20 +1,19 @@
-import { ThemeProvider, useTheme } from "@/components/theme-provider"
+import * as React from 'react'
+import { Admin, Resource } from 'react-admin'
+import { UserList } from './components/users/UserList'
+import { UserShow } from './components/users/UserShow'
+import { dataProvider } from './dataProvider'
 
 function App() {
-  const { theme, setTheme } = useTheme()
-
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <div>
-        <h1>Vite + React</h1>
-        <div className="card">
-          <button onClick={() => setTheme("dark")}>dark</button>
-          <button onClick={() => setTheme("light")}>light</button>
-          <button onClick={() => setTheme("system")}>system</button>
-          <p>{theme}</p>
-        </div>
-      </div>
-    </ThemeProvider>
+    <Admin dataProvider={dataProvider}>
+      <Resource 
+        name="users/admin/all" 
+        list={UserList} 
+        show={UserShow}
+        options={{ label: 'Users' }}
+      />
+    </Admin>
   )
 }
 
